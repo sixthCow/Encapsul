@@ -150,8 +150,8 @@ function getSigner(chainId: number) {
         return "https://sepolia.base.org";
         case 252:
           return "https://rpc.frax.com";
-      case 534351:
-        return "https://sepolia-rpc.scroll.io";
+      case 84533:
+        return "https://virtual.base.rpc.tenderly.co/1e50f9a0-82d7-4088-8039-0ed3192bd956";
       default:
         throw new Error(`Unsupported chainId: ${chainId}`);
     }

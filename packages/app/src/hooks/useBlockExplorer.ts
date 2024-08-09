@@ -10,6 +10,8 @@ export function useBlockExplorer() {
             return 'https://base-sepolia.blockscout.com'
         } else if (chain?.id === 252) {
             return 'https://fraxscan.com'
+        } else if (chain?.id === 84533) {
+            return 'https://dashboard.tenderly.co/explorer/vnet/c22260f7-ff02-4fd0-8f26-10ef07ca4e23'
         } 
     }, [chain?.id])
 }

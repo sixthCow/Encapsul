@@ -11,7 +11,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 const base = {
-  id: 84532 , // Replace with your chain ID
+  id: 84532 , 
   name: "base Sepolia",
   network: "BaseSepolia",
   nativeCurrency: {
@@ -21,23 +21,23 @@ const base = {
   },
   rpcUrls: {
     default: {
-      http: ["https://sepolia.base.org"], // Replace with your RPC URL
+      http: ["https://sepolia.base.org"], 
     },
     public: {
-      http: ["https://sepolia.base.org"], // Replace with your public RPC URL
+      http: ["https://sepolia.base.org"], 
     },
   },
   blockExplorers: {
     default: {
       name: "base blockscout",
-      url: "https://base-sepolia.blockscout.com/", // Replace with your block explorer URL
+      url: "https://base-sepolia.blockscout.com/", 
     },
   },
-  testnet: true, // Set to false if this is a mainnet chain
+  testnet: true, 
 };
 
 const fraxtal = {
-  id: 252, // Replace with your chain ID
+  id: 252, 
   name: "Fraxtal",
   network: "Fraxtal",
   nativeCurrency: {
@@ -47,22 +47,48 @@ const fraxtal = {
   },
   rpcUrls: {
     default: {
-      http: ["https://rpc.frax.com"], // Replace with your RPC URL
+      http: ["https://rpc.frax.com"], 
     },
     public: {
-      http: ["https://rpc.frax.com"], // Replace with your public RPC URL
+      http: ["https://rpc.frax.com"], 
     },
   },
   blockExplorers: {
     default: {
       name: "Fraxtal Explorer",
-      url: "https://fraxscan.com/", // Replace with your block explorer URL
+      url: "https://fraxscan.com/", 
     },
   },
-  testnet: true, // Set to false if this is a mainnet chain
+  testnet: true, 
 };
 
-const testnets = [ fraxtal , base]
+const vnet = {
+  id: 84533, 
+  name: "virtual_base",
+  network: "virtual_base",
+  nativeCurrency: {
+    name: "VETH",
+    symbol: "VETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://virtual.base.rpc.tenderly.co/1e50f9a0-82d7-4088-8039-0ed3192bd956"], 
+    },
+    public: {
+      http: ["https://virtual.base.rpc.tenderly.co/1e50f9a0-82d7-4088-8039-0ed3192bd956"], 
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "virtual_base Explorer",
+      url: "https://virtual.base.rpc.tenderly.co/c22260f7-ff02-4fd0-8f26-10ef07ca4e23", 
+    },
+  },
+  testnet: true, 
+};
+
+const testnets = [ fraxtal , vnet, base]
 
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
