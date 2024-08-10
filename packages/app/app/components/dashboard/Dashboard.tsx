@@ -17,6 +17,7 @@ import {ContentTitle} from "@/app/components/content/ContentRow";
 import {Module} from "@/src/stores/useMintStore";
 import { GiToken} from "react-icons/gi";
 import {RiNftLine} from "react-icons/ri";
+import FundWalletButton from "../button/FundWalletButton";
 
 export enum PackState {
     EMPTY = 'Empty',
@@ -54,16 +55,21 @@ export default function Dashboard() {
 
     return (
         <div>
-            <h1 className='text-5xl text-gray-100 font-extrabold'>Your Capsules</h1>
-            <div className='flex justify-between mt-6 mb-2 flex-wrap-reverse gap-2'>
-                <PackTypeSelector selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes}/>
-                <ButtonLink href={'/mint'} leftIcon={<AiOutlinePlus/>}>Create</ButtonLink>
-            </div>
-            <div className='flex rounded-2xl bg-[#FDE0D933] min-h-[60vh] flex-col p-4'>
-                {!balance && <NoPackFound/>}
-                {!!balance && <PackList count={balance} selectedTypes={selectedTypes}/>}
-            </div>
-        </div>
+  <h1 className="text-5xl text-gray-100 font-extrabold">Your Capsules</h1>
+  <div className="flex justify-between mt-6 mb-2 flex-wrap-reverse gap-2">
+    <PackTypeSelector selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+    <div className="flex justify-end gap-2">
+      <ButtonLink href={'/mint'} leftIcon={<AiOutlinePlus />}>
+        Create
+      </ButtonLink>
+      <FundWalletButton />
+    </div>
+  </div>
+  <div className="flex rounded-2xl bg-[#FDE0D933] min-h-[60vh] flex-col p-4">
+    {!balance && <NoPackFound />}
+    {!!balance && <PackList count={balance} selectedTypes={selectedTypes} />}
+  </div>
+</div>
     )
 }
 
